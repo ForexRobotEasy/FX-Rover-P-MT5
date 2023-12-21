@@ -1,0 +1,68 @@
+
+//+------------------------------------------------------------------+
+//|                                             FX Rover P MT5        |
+//|                                 Developer's Site: forexroboteasy.com |
+//|                                         Developer: Forex Robot Easy Team |
+//+------------------------------------------------------------------+
+
+// Global variables
+double StopLoss = 50; // Default stop loss value
+double FixedVolume = 0.1; // Default fixed volume value
+double RelativeVolume = 0.02; // Default relative volume value
+
+//+------------------------------------------------------------------+
+//|                       Expert initialization function                       |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+    // Set stop loss based on trader's strategy
+    if (StopLoss > 0) {
+        Print('Stop loss feature enabled. Stop loss value: ', StopLoss);
+    } else {
+        Print('Stop loss feature disabled');
+    }
+    
+    // Print trading volume options
+    Print('Fixed volume: ', FixedVolume);
+    Print('Relative volume: ', RelativeVolume);
+    
+    return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//|                     Expert start function                                          |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+    // Place trading logic here
+    // Calculate entry and exit conditions based on range
+    
+    // Check if stop loss is enabled and set stop loss accordingly
+    if (StopLoss > 0) {
+        // Set stop loss level
+    }
+    
+    // Check trading volume option and place trade
+    if (FixedVolume > 0) {
+        // Place trade with fixed volume
+        Print('Placing trade with fixed volume: ', FixedVolume);
+    } else {
+        // Place trade with relative volume
+        Print('Placing trade with relative volume: ', RelativeVolume);
+    }
+    
+    // Close trade when necessary
+    // Calculate exit conditions based on range
+    
+    // Print trade close details
+    Print('Closing trade');
+}
+
+//+------------------------------------------------------------------+
+//|                      Expert deinitialization function                      |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+    // Perform necessary clean-up tasks
+    Print('FX Rover P MT5 deinitialized');
+}
